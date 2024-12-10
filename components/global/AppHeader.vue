@@ -1,9 +1,6 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 
-import 'bootstrap/js/dist/collapse';
-import 'bootstrap/js/dist/dropdown';
-
 const route = useRoute();
 const transparentBgRoute = ['home', 'rooms'];
 
@@ -98,10 +95,13 @@ onUnmounted(() => {
                   style="right: 0; left: auto; border-radius: 20px;"
                 >
                   <li>
-                    <a
+                    <NuxtLink
                       class="dropdown-item px-6 py-4"
-                      href="/user/Jessica"
-                    >我的帳戶</a>
+                      :to="{
+                        name: 'user-userId-profile',
+                        params: { userId: 'Jessica' } 
+                      }"
+                    >我的帳戶</NuxtLink>
                   </li>
                   <li>
                     <a
